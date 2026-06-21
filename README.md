@@ -73,7 +73,21 @@ scripts/
 | `npm run build` | Production build |
 | `npm run start` | Start the production server |
 | `npm run seed` | Create / update the admin account |
+| `npm run upload-gallery` | Upload extracted photos to Cloudinary + MongoDB (resumable) |
 | `npm run lint` | Run ESLint |
+
+## Importing portfolio photos
+
+The initial portfolio (125 photos) was imported from the company-profile PDF:
+
+```bash
+python scripts/pdf_extract.py      # extracts + downscales photos to .extracted/ with a manifest
+npm run upload-gallery             # uploads to Cloudinary and registers them in MongoDB
+```
+
+`pdf_extract.py` needs `PyMuPDF` and `Pillow`. The uploader is resumable — progress is
+saved to `.extracted/uploaded.json`, so re-running after a network drop won't re-upload.
+Categories are inferred from page text and can be refined in the admin Gallery.
 
 ## Deployment
 
