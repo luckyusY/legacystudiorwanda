@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0b0d;
+  --foreground: #f5f3ef;
+  --gold: #c9a24b;
+  --gold-soft: #e6cd8f;
+  --charcoal: #141417;
+  --charcoal-2: #1c1c21;
+  --muted: #9a978f;
+  --border: #2a2a30;
+  --font-playfair: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-2: var(--charcoal-2);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Utilities */
+.container-x {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gold {
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+  color: #1a1408;
+  font-weight: 600;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.btn-gold:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: var(--gold-soft);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--gold);
+  color: #1a1408;
+}
+
+.card {
+  background: var(--charcoal);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::selection {
+  background: var(--gold);
+  color: #1a1408;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--charcoal); }
+::-webkit-scrollbar-thumb { background: #38383f; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
