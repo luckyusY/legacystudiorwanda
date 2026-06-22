@@ -4,6 +4,7 @@ const GalleryImageSchema = new Schema(
   {
     title: { type: String, default: "", trim: true },
     category: { type: String, default: "Portrait" },
+    collection: { type: String, default: "studio-portfolio", index: true },
     url: { type: String, required: true },
     publicId: { type: String, required: true },
     width: { type: Number },
@@ -11,7 +12,7 @@ const GalleryImageSchema = new Schema(
     featured: { type: Boolean, default: false },
     order: { type: Number, default: 0 },
   },
-  { timestamps: true }
+  { timestamps: true, suppressReservedKeysWarning: true }
 );
 
 export type GalleryImageType = InferSchemaType<typeof GalleryImageSchema> & {

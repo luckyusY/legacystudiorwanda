@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/admin/bookings", label: "Bookings" },
   { href: "/admin/contacts", label: "Messages" },
   { href: "/admin/gallery", label: "Gallery" },
+  { href: "/admin/collections", label: "Collections" },
 ];
 
 export default function AdminSidebar({ name }: { name: string }) {

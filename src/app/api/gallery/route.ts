@@ -9,10 +9,12 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const category = searchParams.get("category");
+    const collection = searchParams.get("collection");
 
     await connectDB();
     const filter: Record<string, unknown> = {};
     if (category && category !== "All") filter.category = category;
+    if (collection) filter.collection = collection;
 
     const images = await GalleryImage.find(filter)
       .sort({ featured: -1, order: 1, createdAt: -1 })

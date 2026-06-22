@@ -10,7 +10,7 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, **M
 - **Home** — hero, about, services, featured portfolio, process, why-us, CTA
 - **Services** — all eight service types and the studio's working process
 - **Packages** — Indoor, Outdoor and Wedding packages with full pricing (from the company profile)
-- **Portfolio** — filterable image gallery with lightbox (images served from Cloudinary)
+- **Portfolio** — organized into **collections** (albums); each collection opens a masonry gallery with a keyboard-navigable lightbox (images served from Cloudinary)
 - **Booking** — booking request form saved to MongoDB
 - **Contact** — contact form saved to MongoDB + studio details and map
 
@@ -19,7 +19,8 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, **M
 - **Overview** — booking / message / image counts and recent activity
 - **Bookings** — view details, change status (pending → confirmed → completed / cancelled), delete
 - **Messages** — read/unread, reply via email, delete
-- **Gallery** — upload images to Cloudinary, categorize, mark featured, delete
+- **Gallery** — upload images to Cloudinary, assign to a collection, categorize, mark featured, filter by collection, delete
+- **Collections** — create/rename albums, set category & display order, publish/unpublish
 
 ## Getting started
 
@@ -73,21 +74,37 @@ scripts/
 | `npm run build` | Production build |
 | `npm run start` | Start the production server |
 | `npm run seed` | Create / update the admin account |
-| `npm run upload-gallery` | Upload extracted photos to Cloudinary + MongoDB (resumable) |
+| `npm run upload-gallery` | Upload PDF-extracted photos to Cloudinary + MongoDB (resumable) |
+| `npm run harvest` | Collect image URLs from external galleries (headless Chrome) |
+| `npm run download-images` | Download gallery images via the browser session |
+| `npm run import-collections` | Upload downloaded images to Cloudinary + MongoDB as collections |
 | `npm run lint` | Run ESLint |
 
 ## Importing portfolio photos
 
-The initial portfolio (125 photos) was imported from the company-profile PDF:
+**Studio Portfolio (125 photos)** was imported from the company-profile PDF:
 
 ```bash
 python scripts/pdf_extract.py      # extracts + downscales photos to .extracted/ with a manifest
 npm run upload-gallery             # uploads to Cloudinary and registers them in MongoDB
 ```
 
-`pdf_extract.py` needs `PyMuPDF` and `Pillow`. The uploader is resumable — progress is
-saved to `.extracted/uploaded.json`, so re-running after a network drop won't re-upload.
-Categories are inferred from page text and can be refined in the admin Gallery.
+**Client collections** (e.g. Pre-Wedding, Fed Rwanda, Cainergy) were sourced from external
+Pixieset galleries using headless Chrome (`puppeteer-core` + the installed Chrome):
+
+```bash
+npm run harvest            # collect image URLs per collection -> .extracted/harvest/*.json
+npm run download-images    # download full-res images via the gallery's browser session
+npm run import-collections # upload to Cloudinary + create Collection docs + tag images
+```
+
+Notes:
+- Pixieset blocks server-side hotlinking, so images are captured by **intercepting the
+  gallery's own image responses** (a high `deviceScaleFactor` forces the `xlarge` variants).
+- `pdf_extract.py` needs `PyMuPDF` and `Pillow`. All uploaders are resumable via progress
+  files under `.extracted/`.
+- Google Photos shared albums don't expose stable image URLs this way and aren't supported.
+- Collections, categories and covers can be refined in the admin **Collections** / **Gallery**.
 
 ## Deployment
 

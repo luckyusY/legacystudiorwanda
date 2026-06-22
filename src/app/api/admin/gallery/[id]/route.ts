@@ -8,7 +8,7 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   const body = await req.json();
   await connectDB();
 
-  const allowed = ["title", "category", "featured", "order"] as const;
+  const allowed = ["title", "category", "collection", "featured", "order"] as const;
   const update: Record<string, unknown> = {};
   for (const key of allowed) {
     if (key in body) update[key] = body[key];

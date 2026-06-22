@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node scripts/seed-admin.mjs",
-    "upload-gallery": "node scripts/upload-gallery.mjs"
+    "upload-gallery": "node scripts/upload-gallery.mjs",
+    "harvest": "node scripts/harvest.mjs",
+    "download-images": "node scripts/download-images.mjs",
+    "import-collections": "node scripts/import-collections.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -27,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "puppeteer-core": "^25.1.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
