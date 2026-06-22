@@ -10,7 +10,7 @@ Built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, **M
 - **Home** — hero, about, services, featured portfolio, process, why-us, CTA
 - **Services** — all eight service types and the studio's working process
 - **Packages** — Indoor, Outdoor and Wedding packages with full pricing (from the company profile)
-- **Portfolio** — organized into **collections** (albums); each collection opens a masonry gallery with a keyboard-navigable lightbox (images served from Cloudinary)
+- **Portfolio** — an immersive, full-bleed gallery experience: Lenis smooth scroll, GSAP parallax, Framer Motion reveals, and an editorial mix of grid layouts (full-bleed, panoramic, staggered duos/trios, asymmetric splits, masonry) with a keyboard-navigable lightbox. Images served responsively from Cloudinary (`f_auto,q_auto`, content-aware crops)
 - **Booking** — booking request form saved to MongoDB
 - **Contact** — contact form saved to MongoDB + studio details and map
 
