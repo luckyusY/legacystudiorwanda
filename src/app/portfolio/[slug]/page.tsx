@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import GalleryGrid from "@/components/portfolio/GalleryGrid";
+import LookbookGallery from "@/components/portfolio/LookbookGallery";
 import type { Photo } from "@/components/portfolio/types";
 import { connectDB } from "@/lib/db";
 import Collection from "@/models/Collection";
@@ -52,23 +51,5 @@ export default async function GalleryPage({
   const data = await getData(slug);
   if (!data) notFound();
 
-  return (
-    <div className="min-h-screen pt-24 sm:pt-32 pb-24">
-      <header className="mx-auto w-full max-w-[1500px] px-5 sm:px-8 mb-10 sm:mb-14">
-        <Link href="/portfolio" className="eyebrow !text-muted hover:!text-gold transition-colors">
-          ← Galleries
-        </Link>
-        <div className="flex items-end justify-between gap-6 mt-5">
-          <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl leading-[0.9]">{data.title}</h1>
-          <p className="hidden sm:block font-sans text-sm text-muted shrink-0 pb-2">
-            {data.category} · {data.photos.length} photos
-          </p>
-        </div>
-      </header>
-
-      <section className="mx-auto w-full max-w-[1500px] px-5 sm:px-8">
-        <GalleryGrid photos={data.photos} />
-      </section>
-    </div>
-  );
+  return <LookbookGallery title={data.title} category={data.category} photos={data.photos} />;
 }
