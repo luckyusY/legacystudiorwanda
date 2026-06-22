@@ -42,7 +42,7 @@ export default function PortfolioHeader() {
           Legacy Studio
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-6">
           {galleries.map((g) => {
             const active = pathname === `/${g.slug}`;
             return (
@@ -55,6 +55,16 @@ export default function PortfolioHeader() {
               </Link>
             );
           })}
+          <Link
+            href="/pricing"
+            className={`text-sm rounded-full border px-4 py-1.5 transition-colors ${
+              pathname === "/pricing"
+                ? "border-gold text-gold"
+                : "border-border text-foreground/80 hover:border-gold hover:text-gold"
+            }`}
+          >
+            Pricing
+          </Link>
         </nav>
 
         <button
@@ -82,6 +92,12 @@ export default function PortfolioHeader() {
                 {g.title}
               </Link>
             ))}
+            <Link
+              href="/pricing"
+              className={`py-2.5 text-sm border-t border-border mt-1 pt-3 ${pathname === "/pricing" ? "text-gold" : "text-gold/90"}`}
+            >
+              Pricing &amp; Packages
+            </Link>
           </div>
         </div>
       )}
