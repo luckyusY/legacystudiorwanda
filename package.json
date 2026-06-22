@@ -12,6 +12,8 @@
     "harvest": "node scripts/harvest.mjs",
     "download-images": "node scripts/download-images.mjs",
     "import-collections": "node scripts/import-collections.mjs",
+    "gphotos-harvest": "node scripts/gphotos-harvest.mjs",
+    "gphotos-import": "node scripts/gphotos-import.mjs",
     "lookbook": "node scripts/lookbook-select.mjs && node scripts/lookbook-build.mjs && node scripts/lookbook-render.mjs"
   },
   "dependencies": {
