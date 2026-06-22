@@ -5,7 +5,7 @@
 
 export const COMPANY = {
   name: "Legacy Studio",
-  tagline: "Capturing moments, creating timeless visual art.",
+  tagline: "Where moments become heirlooms.",
   location: "KG 3 AVE Kacyiru, Kigali, Rwanda",
   email: "info@mylegacystudio.com",
   phone: "(250) 788 202 813",
@@ -14,29 +14,29 @@ export const COMPANY = {
 
 export const ABOUT = {
   intro:
-    "Legacy Studio is a creative photography and media production company committed to capturing meaningful moments and transforming them into timeless visual art. Based in Rwanda, the studio blends creativity, storytelling, and technical expertise to produce high-quality photo and video content that reflects authenticity, emotion, and purpose.",
-  body: "At the core of Legacy Studio's work is a deep understanding that every moment has a story worth preserving. By combining modern equipment, creative direction, and post-production expertise, we deliver polished, impactful imagery that enhances personal memories and strengthens brand presence.",
+    "Legacy Studio is a photography and film studio in Kigali, built on a simple belief: the moments that shape a life deserve to be kept beautifully. We photograph weddings, milestones and brands with an eye for the quiet, in-between feeling that makes an image worth returning to.",
+  body: "From the first conversation to the final gallery, we direct gently, light with intention, and edit with restraint — so the people in the frame, and the feeling of the day, are exactly what you remember. Made in Rwanda, made to last.",
   mission: [
-    "To capture life's most important moments with passion, creativity, and technical excellence.",
-    "To provide clients with stunning photo and video experiences that reflect their personalities, emotions, and stories.",
-    "To contribute to visual culture by producing authentic art that resonates far beyond the shutter click.",
+    "Photograph the moments that matter with honesty, artistry and care.",
+    "Give every client images that feel like them — never a template.",
+    "Make pictures worth keeping for a generation, not just a scroll.",
   ],
   values: [
     {
-      title: "Creativity & Quality",
-      text: "Pushing artistic boundaries while maintaining professional standards.",
+      title: "Craft First",
+      text: "We chase the frame no one else noticed — then finish it to an exacting standard.",
     },
     {
-      title: "Client-Focused Service",
-      text: "Treating every individual and project with care, respect, and responsiveness.",
+      title: "People, Not Poses",
+      text: "Calm direction and real attention, so you feel at ease the moment the lens is up.",
     },
     {
-      title: "Authenticity",
-      text: "Capturing genuine moments that reflect real emotions and personal narratives.",
+      title: "Honest Frames",
+      text: "Genuine emotion over stiff formality. We keep what's true to the day.",
     },
     {
-      title: "Professional Integrity",
-      text: "Delivering work that clients can trust and proudly share.",
+      title: "Quietly Reliable",
+      text: "On time, prepared and dependable — work you can hand down and show off.",
     },
   ],
 };
@@ -50,44 +50,43 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     slug: "portrait",
-    title: "Portrait Photography",
-    description: "Artistic captures that showcase individual beauty and personality.",
+    title: "Portraiture",
+    description: "Portraits that look like you on your most honest, most confident day.",
   },
   {
     slug: "wedding",
-    title: "Wedding & Marriage Shoots",
-    description: "Complete documentation of wedding days, from vows to celebrations.",
+    title: "Weddings",
+    description: "From the first look to the last dance — your day, told in full.",
   },
   {
     slug: "event",
-    title: "Event Photography",
-    description: "Coverage of birthdays, corporate events, gatherings, and celebrations.",
+    title: "Events",
+    description: "Birthdays, corporate and celebrations, covered with a documentary eye.",
   },
   {
     slug: "artistic",
-    title: "Artistic Photography",
-    description: "Creative sessions for themed or styled art projects.",
+    title: "Artistic Sessions",
+    description: "Concept-led, styled shoots for when you want something made with intent.",
   },
   {
     slug: "commercial",
-    title: "Commercial Photo & Video",
-    description: "High-quality visuals for business branding and promotion.",
+    title: "Commercial & Brand",
+    description: "Photo and video that make a brand look as good as it actually is.",
   },
   {
     slug: "maternity",
-    title: "Maternity Shoots",
-    description:
-      "Documentation of your maternity journey, from glowing anticipation to welcoming your little one.",
+    title: "Maternity",
+    description: "The glow before the arrival — tender, unhurried, and yours to keep.",
   },
   {
     slug: "kids",
-    title: "Kid's Photography",
-    description: "Fun, full-day coverage for kids — from sweet little moments to all the laughter.",
+    title: "Children & Family",
+    description: "Unscripted, joyful coverage that keeps up with the little ones.",
   },
   {
     slug: "product",
-    title: "Product Photography",
-    description: "Full visual documentation of products, from key details to final presentation.",
+    title: "Product",
+    description: "Clean, considered product imagery that earns the click.",
   },
 ];
 
@@ -333,18 +332,18 @@ export const WEDDING_PACKAGES: PackageTier[] = [
 ];
 
 export const PROCESS = [
-  { title: "Consultation", text: "Understanding your vision, style preferences, and project needs." },
-  { title: "Planning & Preparation", text: "Outlining the photo/video concept, locations, and shot list." },
-  { title: "Creative Capture", text: "Using professional equipment and artistic direction for high-quality images." },
-  { title: "Post-Production", text: "Expert editing and enhancement to bring out the best in every shot." },
-  { title: "Delivery", text: "Sharing finished photos and videos in formats suited to your needs." },
+  { title: "Conversation", text: "We start with you — the day, the people, the feeling you want to keep." },
+  { title: "The Plan", text: "Concept, locations and a loose shot list, so nothing that matters is missed." },
+  { title: "The Shoot", text: "Calm, confident direction and intentional light. You relax; we work." },
+  { title: "The Edit", text: "Careful colour and retouching that flatters without ever feeling false." },
+  { title: "The Gallery", text: "Your finished images, delivered ready to print, share and treasure." },
 ];
 
 export const WHY_US = [
-  { title: "Experienced Team", text: "A creative group passionate about visual storytelling and capturing real, heartfelt moments." },
-  { title: "Genuine Moments", text: "We focus on natural, candid photography that feels personal and timeless." },
-  { title: "Client-Centric Guidance", text: "Professional support throughout the shoot, helping you feel comfortable and confident." },
-  { title: "Proven Track Record", text: "Trusted by thousands of clients for quality work and memorable visual outcomes." },
+  { title: "A Practised Eye", text: "Years behind the lens at weddings, brands and milestones across Rwanda." },
+  { title: "Candid by Nature", text: "We work for the real, unguarded moments — the ones you'll actually frame." },
+  { title: "You, at Ease", text: "Gentle guidance throughout, so being photographed never feels like work." },
+  { title: "Trusted Hands", text: "Thousands of frames delivered, and clients who come back for the next chapter." },
 ];
 
 export const EXPRESS_NOTICE =

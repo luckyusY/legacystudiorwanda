@@ -24,31 +24,27 @@ export default function HomePage() {
           }}
         />
         <div className="container-x fade-up">
-          <span className="text-xs uppercase tracking-[0.4em] text-gold">
-            Photography · Media Production · Kigali
-          </span>
-          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl mt-6 leading-[1.05] max-w-4xl">
-            Capturing moments,
-            <br />
-            creating <span className="text-gradient-gold">timeless</span> art.
+          <span className="eyebrow">Photography &amp; Film · Kigali, Rwanda</span>
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-[5.5rem] mt-6 leading-[0.98] max-w-4xl">
+            Where moments become <span className="text-gradient-gold italic">heirlooms</span>.
           </h1>
-          <p className="text-lg text-foreground/75 mt-6 max-w-xl leading-relaxed">
-            {COMPANY.tagline} We blend creativity, storytelling, and technical excellence to
-            preserve the stories that matter most.
+          <p className="text-lg text-foreground/75 mt-7 max-w-xl leading-relaxed">
+            We photograph weddings, milestones and brands across Rwanda — for the quiet,
+            in-between feeling that makes an image worth returning to.
           </p>
           <div className="flex flex-wrap gap-4 mt-10">
             <Link href="/booking" className="btn-gold rounded-full px-8 py-3.5">
-              Book a Session
+              Start a Booking
             </Link>
             <Link href="/portfolio" className="btn-outline rounded-full px-8 py-3.5">
-              View Portfolio
+              See the Work
             </Link>
           </div>
 
           <div className="flex flex-wrap gap-10 mt-16 text-sm">
-            <Stat value="1000+" label="Happy Clients" />
-            <Stat value="8" label="Service Types" />
-            <Stat value="100%" label="Authentic Moments" />
+            <Stat value="1000+" label="Frames Delivered" />
+            <Stat value="8" label="Ways We Shoot" />
+            <Stat value="Kigali" label="Based in Rwanda" />
           </div>
         </div>
       </section>
@@ -57,7 +53,7 @@ export default function HomePage() {
       <section className="container-x py-24">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <SectionHeading eyebrow="About Legacy Studio" title="Every moment has a story worth preserving." />
+            <SectionHeading eyebrow="About the Studio" title="The moments that shape a life, kept beautifully." />
             <p className="text-foreground/75 mt-6 leading-relaxed">{ABOUT.intro}</p>
             <p className="text-muted mt-4 leading-relaxed">{ABOUT.body}</p>
           </div>
@@ -76,9 +72,9 @@ export default function HomePage() {
       <section className="container-x py-12">
         <SectionHeading
           center
-          eyebrow="What we do"
-          title="Our Services"
-          subtitle="Professional photography and media services tailored to both personal and business needs."
+          eyebrow="What We Do"
+          title="Ways we tell your story"
+          subtitle="From weddings and portraits to brands and products — one studio, an eye for every occasion."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
           {SERVICES.map((s) => (
@@ -97,13 +93,13 @@ export default function HomePage() {
 
       {/* FEATURED PORTFOLIO */}
       <section className="container-x py-24">
-        <SectionHeading center eyebrow="Selected work" title="From the Portfolio" />
+        <SectionHeading center eyebrow="Selected Work" title="A look through the lens" />
         <div className="mt-12">
           <FeaturedGallery />
         </div>
         <div className="text-center mt-10">
           <Link href="/portfolio" className="btn-gold rounded-full px-7 py-3 inline-block">
-            See full gallery
+            Browse the galleries
           </Link>
         </div>
       </section>
@@ -111,7 +107,7 @@ export default function HomePage() {
       {/* PROCESS */}
       <section className="bg-charcoal border-y border-border py-24">
         <div className="container-x">
-          <SectionHeading center eyebrow="How we work" title="A thoughtful, collaborative process" />
+          <SectionHeading center eyebrow="How We Work" title="From hello to gallery" />
           <div className="grid md:grid-cols-5 gap-6 mt-14">
             {PROCESS.map((p, i) => (
               <div key={p.title} className="text-center">
@@ -128,7 +124,7 @@ export default function HomePage() {
 
       {/* WHY US */}
       <section className="container-x py-24">
-        <SectionHeading center eyebrow="Why choose us" title="Trusted for quality and care" />
+        <SectionHeading center eyebrow="Why Legacy" title="Why families and brands keep coming back" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
           {WHY_US.map((w) => (
             <div key={w.title} className="card rounded-xl p-6">
@@ -142,13 +138,13 @@ export default function HomePage() {
       {/* CTA */}
       <section className="container-x pb-24">
         <div className="rounded-2xl border border-gold/40 bg-gradient-to-br from-charcoal to-charcoal-2 p-12 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl">Let&apos;s create something timeless.</h2>
+          <h2 className="font-serif text-3xl sm:text-5xl">Let&apos;s make something worth keeping.</h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Tell us about your vision and we&apos;ll craft visuals that resonate long after the moment
-            has passed.
+            Tell us about the day you have in mind. We&apos;ll bring the eye, the calm and the craft —
+            and hand you images you&apos;ll still love in twenty years.
           </p>
           <Link href="/booking" className="btn-gold rounded-full px-8 py-3.5 inline-block mt-8">
-            Book your session
+            Start a booking
           </Link>
         </div>
       </section>

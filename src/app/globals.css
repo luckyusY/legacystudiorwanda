@@ -9,8 +9,8 @@
   --charcoal-2: #1c1c21;
   --muted: #9a978f;
   --border: #2a2a30;
-  --font-playfair: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 @theme inline {
@@ -22,8 +22,8 @@
   --color-charcoal-2: var(--charcoal-2);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
 }
 
 * {
@@ -37,12 +37,28 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 350;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-playfair), Georgia, serif;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  font-feature-settings: "ss01", "liga", "dlig";
+}
+
+/* Editorial eyebrow / label */
+.eyebrow {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  color: var(--gold);
 }
 
 /* Utilities */

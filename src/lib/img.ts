@@ -18,7 +18,7 @@ export function cldCrop(url: string, w: number, h: number): string {
   return insert(url, `f_auto,q_auto,c_fill,g_auto,w_${w},h_${h}`);
 }
 
-const FIT_WIDTHS = [640, 960, 1280, 1600, 2000];
+const FIT_WIDTHS = [384, 540, 768, 1080, 1440, 2000];
 
 /** Responsive srcset (scaled, no crop). */
 export function fitSrcSet(url: string): string {

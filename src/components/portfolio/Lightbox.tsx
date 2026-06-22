@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cldFit } from "@/lib/img";
-import type { Photo } from "./Frame";
+import type { Photo } from "./types";
 
 export default function Lightbox({
   photos,
