@@ -106,6 +106,20 @@ Notes:
 - Google Photos shared albums don't expose stable image URLs this way and aren't supported.
 - Collections, categories and covers can be refined in the admin **Collections** / **Gallery**.
 
+## Print lookbook (PDF portfolio)
+
+Generate a 16:9 print/share lookbook (`Legacy-Studio-Portfolio.pdf`) from the best
+client-gallery photos — styled after the company-profile deck (charcoal + gold, outlined
+display type, full-bleed photo spreads):
+
+```bash
+npm run lookbook
+```
+
+This runs `scripts/lookbook-select.mjs` → `-build.mjs` → `-render.mjs`: curate + download a
+high-res subset from Cloudinary, generate the HTML, and render it to PDF with headless
+Chrome. Output lands in `.pdfwork/` (git-ignored).
+
 ## Deployment
 
 Deploys cleanly to **Vercel**. Add the environment variables from `.env.example` in the project settings, then run the seed script once (locally against the production database) to create the admin account.

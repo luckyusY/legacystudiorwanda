@@ -11,7 +11,8 @@
     "upload-gallery": "node scripts/upload-gallery.mjs",
     "harvest": "node scripts/harvest.mjs",
     "download-images": "node scripts/download-images.mjs",
-    "import-collections": "node scripts/import-collections.mjs"
+    "import-collections": "node scripts/import-collections.mjs",
+    "lookbook": "node scripts/lookbook-select.mjs && node scripts/lookbook-build.mjs && node scripts/lookbook-render.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

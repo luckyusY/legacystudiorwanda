@@ -39,7 +39,10 @@ yarn-error.log*
 
 # local PDF photo extraction (uploaded to Cloudinary, not committed)
 .extracted/
+# lookbook working dir (downloaded photos, rendered PDF)
+.pdfwork/
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+Legacy-Studio-Portfolio.pdf
