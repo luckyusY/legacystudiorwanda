@@ -41,15 +41,15 @@ export default function IndexList({ entries }: { entries: GalleryEntry[] }) {
           <li key={e.slug} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)}>
             <Link
               href={`/${e.slug}`}
-              className="group flex items-center gap-4 sm:gap-8 border-b border-border/70 py-8 sm:py-12"
+              className="group flex items-center gap-3 sm:gap-8 border-b border-border/70 py-6 sm:py-12"
             >
-              <span className="font-sans text-xs text-gold/70 tabular-nums w-8 shrink-0 pt-3 self-start">
+              <span className="font-sans text-[11px] sm:text-xs text-gold/70 tabular-nums w-6 sm:w-8 shrink-0 pt-2 self-start">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
               {/* inline thumb on mobile */}
               <span
-                className="lg:hidden shrink-0 w-16 h-20 overflow-hidden bg-charcoal-2"
+                className="lg:hidden shrink-0 w-14 h-[72px] sm:w-16 sm:h-20 overflow-hidden bg-charcoal-2"
                 style={{ backgroundImage: `url(${cldBlur(e.coverUrl)})`, backgroundSize: "cover" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -58,11 +58,15 @@ export default function IndexList({ entries }: { entries: GalleryEntry[] }) {
 
               <span className="min-w-0 flex-1">
                 <span
-                  className={`block text-[13vw] sm:text-7xl lg:text-8xl leading-[0.9] transition-colors duration-300 ${
+                  className={`block break-words text-[8.5vw] sm:text-6xl lg:text-8xl leading-[0.92] transition-colors duration-300 ${
                     hover === i ? "lb text-gold" : "lb lb-ol-white"
                   }`}
                 >
                   {e.title}
+                </span>
+                {/* meta on mobile */}
+                <span className="sm:hidden mt-2 block font-sans text-[10px] tracking-[0.2em] uppercase text-muted">
+                  {e.category} · {e.count} photos
                 </span>
               </span>
 
@@ -71,7 +75,7 @@ export default function IndexList({ entries }: { entries: GalleryEntry[] }) {
                 <span className="font-sans text-sm text-muted mt-1">{e.count} photos</span>
               </span>
 
-              <span className="shrink-0 self-start pt-2 text-2xl text-muted transition-all duration-300 group-hover:text-gold group-hover:translate-x-1">
+              <span className="shrink-0 self-start pt-2 text-xl sm:text-2xl text-muted transition-all duration-300 group-hover:text-gold group-hover:translate-x-1">
                 ↗
               </span>
             </Link>
