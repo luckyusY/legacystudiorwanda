@@ -40,7 +40,7 @@ export default function IndexList({ entries }: { entries: GalleryEntry[] }) {
         {entries.map((e, i) => (
           <li key={e.slug} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)}>
             <Link
-              href={`/portfolio/${e.slug}`}
+              href={`/${e.slug}`}
               className="group flex items-center gap-4 sm:gap-8 border-b border-border/70 py-8 sm:py-12"
             >
               <span className="font-sans text-xs text-gold/70 tabular-nums w-8 shrink-0 pt-3 self-start">

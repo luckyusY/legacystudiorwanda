@@ -3,12 +3,15 @@ import SmoothScroll from "@/components/portfolio/SmoothScroll";
 import PortfolioHeader from "@/components/portfolio/PortfolioHeader";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: {
+    default: "Legacy Studio — Photography Galleries, Kigali",
+    template: "%s | Legacy Studio",
+  },
   description:
-    "An immersive gallery of photography by Legacy Studio, Kigali — weddings, events and portraits.",
+    "Selected photography galleries by Legacy Studio, Kigali — weddings, events, brands and portraits.",
 };
 
-export default function PortfolioLayout({ children }: { children: React.ReactNode }) {
+export default function GalleryLayout({ children }: { children: React.ReactNode }) {
   return (
     <SmoothScroll>
       <PortfolioHeader />

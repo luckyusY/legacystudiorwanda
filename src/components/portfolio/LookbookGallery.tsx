@@ -122,7 +122,7 @@ export default function LookbookGallery({
       {visible >= blocks.length && (
         <section className="px-5 sm:px-8 py-28 text-center">
           <p className="eyebrow">End of gallery</p>
-          <a href="/portfolio" className="inline-block mt-5 lb lb-ol-gold text-5xl sm:text-7xl">
+          <a href="/" className="inline-block mt-5 lb lb-ol-gold text-5xl sm:text-7xl">
             More Work
           </a>
         </section>

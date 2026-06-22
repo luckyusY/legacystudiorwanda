@@ -36,14 +36,14 @@ async function getEntries(): Promise<GalleryEntry[]> {
   return entries.filter((e) => e.count > 0);
 }
 
-export default async function PortfolioIndexPage() {
+export default async function HomeIndexPage() {
   const entries = await getEntries();
   const hero = entries[0]?.coverUrl;
 
   return (
     <>
-      {/* PDF-style cover */}
-      <section className="grid lg:grid-cols-[46%_54%] min-h-[92vh]">
+      {/* Cover */}
+      <section className="grid lg:grid-cols-[46%_54%] min-h-[100svh]">
         <div className="relative flex flex-col justify-between px-6 sm:px-12 py-20 lg:py-16 bg-charcoal order-2 lg:order-1">
           <div
             className="absolute inset-0 -z-0 opacity-[0.05]"
@@ -53,12 +53,17 @@ export default async function PortfolioIndexPage() {
               backgroundSize: "52px 52px",
             }}
           />
-          <span className="relative eyebrow">{COMPANY.name} · Kigali</span>
+          <span className="relative eyebrow">{COMPANY.name} · Kigali, Rwanda</span>
           <div className="relative">
-            <h1 className="lb lb-ol-gold text-[22vw] lg:text-[10rem] leading-[0.82]">Port&shy;folio</h1>
+            <h1 className="lb lb-ol-gold text-[24vw] lg:text-[11rem] leading-[0.8]">
+              Legacy
+              <br />
+              Studio
+            </h1>
             <div className="h-1 w-28 bg-gold mt-8" />
             <p className="font-sans text-foreground/70 mt-6 max-w-sm leading-relaxed">
-              Selected galleries — weddings, brands and the milestones in between, photographed across Rwanda.
+              A photography studio in Kigali. Selected galleries — weddings, events, brands and the
+              moments in between.
             </p>
           </div>
           <span className="relative font-sans text-xs tracking-[0.3em] uppercase text-muted">
@@ -68,7 +73,7 @@ export default async function PortfolioIndexPage() {
 
         {hero && (
           <div
-            className="relative order-1 lg:order-2 min-h-[46vh] lg:min-h-0 overflow-hidden"
+            className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-0 overflow-hidden"
             style={{ backgroundImage: `url(${cldBlur(hero)})`, backgroundSize: "cover", backgroundPosition: "center" }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -85,8 +90,8 @@ export default async function PortfolioIndexPage() {
         )}
       </section>
 
-      {/* Galleries index */}
-      <section className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 pt-20 sm:pt-28 pb-28">
+      {/* Galleries */}
+      <section id="galleries" className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 pt-20 sm:pt-28 pb-28">
         <span className="eyebrow">The Galleries</span>
         <div className="mt-10 sm:mt-14">
           {entries.length === 0 ? (
